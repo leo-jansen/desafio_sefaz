@@ -14,11 +14,13 @@ public class UsuarioRepository {
 	}
 
 	public void cadastrar(Usuario usuario) {
+		this.entityManager.getTransaction().begin();
 		this.entityManager.persist(usuario);
+		this.entityManager.getTransaction().commit();
 	}
 
 	public List<Usuario> buscarUsuarios() {
-    String jpql = "SELECT u FROM tb_usuarios u";
+    String jpql = "SELECT u FROM Usuario u";
     return this.entityManager.createQuery(jpql, Usuario.class).getResultList();
   }
 }
