@@ -19,11 +19,11 @@
 		<form action="/sefaz/home" method="post" class="card-body">
 			<div class="form-group">
 				<label for="nome" class="form-label">Nome</label>
-				<input type="text" class="form-control" id="nome" name="nome">
+				<input type="text" class="form-control" id="nome" name="nome" required>
 			</div>
 			<div class="form-group">
 				<label for="senha" class="form-label">Senha</label>
-				<input type="password" class="form-control" id="senha" name="senha">
+				<input type="password" class="form-control" id="senha" name="senha" required>
 			</div>
 			<a href="/sefaz/incluirUsuario">Cadastrar usuario</a>
 			<button type="submit" class="btn btn-primary">Login</button>

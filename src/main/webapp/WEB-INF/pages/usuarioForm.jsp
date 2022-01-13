@@ -19,23 +19,23 @@
 		<form action="/sefaz/cadastrarUsuario" method="post" class="card-body">
 			<div class="form-group">
 				<label for="nome" class="form-label">Nome</label>
-				<input type="text" class="form-control" id="nome" name="nome">
+				<input type="text" class="form-control" id="nome" name="nome" required>
 			</div>
 			<div class="form-group">
 				<label for="senha" class="form-label">Senha</label>
-				<input type="password" class="form-control" id="senha" name="senha">
+				<input type="password" class="form-control" id="senha" name="senha" required>
 			</div>
 			<div class="form-group">
 				<label for="email" class="form-label">Email</label>
-				<input type="text" class="form-control" id="email" name="email">
+				<input type="text" class="form-control" id="email" name="email" required>
 			</div>
 			<div class="form-group">
 				<label for="ddd" class="form-label">DDD</label>
-				<input type="number" class="form-control" id="ddd" name="ddd">
+				<input type="number" class="form-control" id="ddd" name="ddd" required>
 			</div>
 			<div class="form-group">
 				<label for="numero" class="form-label">Numero</label>
-				<input type="text" class="form-control" id="numero" name="numero">
+				<input type="text" class="form-control" id="numero" name="numero" required>
 			</div>
 			<div class="form-group">
 				<label for="tipo">Tipo</label>
