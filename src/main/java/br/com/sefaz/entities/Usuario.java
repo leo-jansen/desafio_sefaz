@@ -29,6 +29,14 @@ public class Usuario {
 		this.telefone = new Telefone(ddd, numero, tipo);
 	}
 
+	public Usuario(Long id, String nome, String email, String senha, int ddd, String numero, String tipo) {
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.telefone = new Telefone(ddd, numero, tipo);
+	}
+
 	public Long getId() {
 		return id;
 	}
