@@ -7,17 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class IncluirUsuario implements Path {
+public class Logout implements Path {
 
 	@Override
 	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("isConnected") == null) {
-			request.setAttribute("conected", false);
-		} else {
-			request.setAttribute("conected", true);
-		}
-		return "forward:usuarioForm.jsp";
+		session.setAttribute("isConnected", null);
+		return "forward:login.jsp";
 	}
 
 }

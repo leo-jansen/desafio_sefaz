@@ -13,19 +13,18 @@
 <body>
 	<header class="navbar navbar-expand navbar-dark bg-primary d-flex justify-content-between mb-3">
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
-		<a class="btn btn-outline-light" href="/sefaz/login">Login</a>
 	</header>
 	<div class="container">
-		<form action="/sefaz/home" method="post" class="card-body">
+		<form action="/sefaz/login" method="post" class="card-body">
 			<div class="form-group">
-				<label for="nome" class="form-label">Nome</label>
-				<input type="text" class="form-control" id="nome" name="nome" required>
+				<label for="email" class="form-label">Email</label>
+				<input type="text" class="form-control" id="email" name="email" required>
 			</div>
 			<div class="form-group">
 				<label for="senha" class="form-label">Senha</label>
 				<input type="password" class="form-control" id="senha" name="senha" required>
 			</div>
-			<a href="/sefaz/incluirUsuario">Cadastrar usuario</a>
+			<a href="/sefaz/incluirUsuario">Cadastrar usuario</a><br>
 			<button type="submit" class="btn btn-primary">Login</button>
 		</form>
 	</div>

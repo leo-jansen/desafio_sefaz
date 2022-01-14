@@ -15,7 +15,7 @@
 <body>
 	<header class="navbar navbar-expand navbar-dark bg-primary d-flex justify-content-between mb-3">
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
-		<a class="btn btn-outline-light" href="/sefaz/login" id="logout">Logout</a>
+		<a class="btn btn-outline-light" href="/sefaz/logout" id="logout">Logout</a>
 	</header>
 	<div class="container">
 		<nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">

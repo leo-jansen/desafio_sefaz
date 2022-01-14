@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +14,12 @@
 <body>
 	<header class="navbar navbar-expand navbar-dark bg-primary d-flex justify-content-between mb-3">
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
-		<a class="btn btn-outline-light" href="/sefaz/login">Login</a>
+		<c:if test="${conected == false}">
+			<a class="btn btn-outline-light" href="/sefaz/login">Login</a>
+		</c:if>
+		<c:if test="${conected == true}">
+			<a class="btn btn-outline-light" href="/sefaz/logout">Logout</a>
+		</c:if>
 	</header>
 	<div class="container">
 		<form action="/sefaz/cadastrarUsuario" method="post" class="card-body">
