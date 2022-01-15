@@ -15,7 +15,7 @@
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
 	</header>
 	<div class="container">
-		<form action="/sefaz/login" method="post" class="card-body">
+		<form action="/sefaz/validacao" method="post" class="card-body">
 			<div class="form-group">
 				<label for="email" class="form-label">Email</label>
 				<input type="text" class="form-control" id="email" name="email" required>

@@ -21,7 +21,7 @@ public class ServeletController extends HttpServlet {
 		String uri = req.getRequestURI();
 		if (session.getAttribute("isConnected") == null
 				&& !(uri.equals("/sefaz/incluirUsuario") || uri.equals("/sefaz/cadastrarUsuario")
-						|| uri.equals("/sefaz/login"))) {
+						|| uri.equals("/sefaz/login") || uri.equals("/sefaz/validacao"))) {
 			RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/pages/login.jsp");
 			rd.forward(req, resp);
 		} else {
