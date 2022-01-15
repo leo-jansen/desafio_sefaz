@@ -32,11 +32,35 @@ public class UsuarioRepository {
 			Usuario user = new Usuario();
 			return user;
 		}
+	}
 
+	public Usuario buscaUsuarioPorId(Long id) {
+		String jpql = "SELECT u FROM Usuario u WHERE u.id = :id";
+		try {
+			Usuario user = this.entityManager.createQuery(jpql, Usuario.class)
+					.setParameter("id", id)
+					.getSingleResult();
+			return user;
+		} catch (NoResultException e) {
+			return new Usuario();
+		}
 	}
 
 	public List<Usuario> buscarUsuarios() {
 		String jpql = "SELECT u FROM Usuario u";
 		return this.entityManager.createQuery(jpql, Usuario.class).getResultList();
 	}
+
+	public void atualizar(Usuario usuario) {
+		this.entityManager.getTransaction().begin();
+		this.entityManager.merge(usuario);
+		this.entityManager.getTransaction().commit();
+	}
+
+  public void remove(Usuario usuario) {
+		this.entityManager.getTransaction().begin();
+		this.entityManager.merge(usuario);
+		this.entityManager.remove(usuario);
+		this.entityManager.getTransaction().commit();
+  }
 }

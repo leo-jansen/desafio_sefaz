@@ -30,8 +30,8 @@
 				<div class="card-body">
 					<p class="card-text">Email: ${usuario.email}</p>
 					<p class="card-text">${usuario.telefone.toString()}</p>
-					<a href="#"><button class="btn btn-secondary">Editar</button></a>
-					<a href="#"><button class="btn btn-danger">Excluir</button></a>
+					<a href="/sefaz/editar?id=${usuario.id}"><button class="btn btn-secondary">Editar</button></a>
+					<a href="/sefaz/remover?id=${usuario.id}"><button class="btn btn-danger">Excluir</button></a>
 				</div>
 			</div>
 		</c:forEach> 
