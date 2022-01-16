@@ -35,15 +35,7 @@ public class UsuarioRepository {
 	}
 
 	public Usuario buscaUsuarioPorId(Long id) {
-		String jpql = "SELECT u FROM Usuario u WHERE u.id = :id";
-		try {
-			Usuario user = this.entityManager.createQuery(jpql, Usuario.class)
-					.setParameter("id", id)
-					.getSingleResult();
-			return user;
-		} catch (NoResultException e) {
-			return new Usuario();
-		}
+		return this.entityManager.find(Usuario.class, id);
 	}
 
 	public List<Usuario> buscarUsuarios() {
@@ -63,4 +55,11 @@ public class UsuarioRepository {
 		this.entityManager.remove(usuario);
 		this.entityManager.getTransaction().commit();
   }
+
+	public void removeTodosUsuarios() {
+		String query = "TRUNCATE TABLE tb_usuarios";
+		this.entityManager.getTransaction().begin();
+		this.entityManager.createNativeQuery(query).executeUpdate();
+		this.entityManager.getTransaction().commit();
+	}
 }

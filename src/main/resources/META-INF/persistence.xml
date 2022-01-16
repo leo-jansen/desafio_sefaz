@@ -3,7 +3,7 @@
 	<persistence-unit name="sefaz" transaction-type="RESOURCE_LOCAL">
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:sefaz" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:sefaz;DB_CLOSE_DELAY=-1" />
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 

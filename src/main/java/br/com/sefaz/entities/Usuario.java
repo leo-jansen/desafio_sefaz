@@ -77,4 +77,13 @@ public class Usuario {
 	public String toString() {
 		return String.format("Nome: %s | Email: %s | %s", this.nome, this.email, this.telefone.toString());
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this.toString().equals(obj.toString())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

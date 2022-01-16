@@ -29,6 +29,18 @@ public class Telefone {
 		return tipo;
 	}
 
+	public void setDdd(int ddd) {
+		this.ddd = ddd;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("%s: (%d) %s", this.tipo, this.ddd, this.numero);
