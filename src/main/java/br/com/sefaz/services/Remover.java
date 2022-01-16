@@ -14,7 +14,7 @@ import br.com.sefaz.util.JPAUtil;
 public class Remover implements Path{
 
 	@Override
-	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long id = Long.valueOf(request.getParameter("id"));
 
 		EntityManager entityManager = JPAUtil.getEntityManager();

@@ -22,7 +22,7 @@ public class ServeletController extends HttpServlet {
 				nomeClasse[2].substring(0, 1).toUpperCase().concat(nomeClasse[2].substring(1)));
 		try {
 			Path path = (Path) Class.forName(caminhoClasse).getDeclaredConstructor().newInstance();
-			String nome = path.exeuta(req, resp);
+			String nome = path.executa(req, resp);
 			String[] tipoEEndereco = nome.split(":");
 			if (tipoEEndereco[0].equals("forward")) {
 				RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/pages/" + tipoEEndereco[1]);

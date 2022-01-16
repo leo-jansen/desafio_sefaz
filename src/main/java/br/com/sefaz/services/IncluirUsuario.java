@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class IncluirUsuario implements Path {
 
 	@Override
-	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("isConnected") == null) {
 			request.setAttribute("conected", false);

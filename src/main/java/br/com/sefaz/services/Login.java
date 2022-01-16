@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Login implements Path {
 
 	@Override
-	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		return "forward:login.jsp";
 	}
 

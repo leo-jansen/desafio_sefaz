@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.sefaz.entities.Telefone;
 import br.com.sefaz.entities.Usuario;
 import br.com.sefaz.repositories.UsuarioRepository;
 import br.com.sefaz.util.JPAUtil;
@@ -15,7 +14,7 @@ import br.com.sefaz.util.JPAUtil;
 public class Alterar implements Path{
 
 	@Override
-	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Long id = Long.valueOf(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -31,8 +30,9 @@ public class Alterar implements Path{
 		usuario.setNome(nome);
 		usuario.setEmail(email);
 		usuario.setSenha(senha);
-		Telefone telefone = new Telefone(ddd, numero, tipo);
-		usuario.setTelefone(telefone);
+		usuario.getTelefone().setDdd(ddd);
+		usuario.getTelefone().setNumero(numero);
+		usuario.getTelefone().setTipo(tipo);
 
 		usuarioRepository.atualizar(usuario);
 

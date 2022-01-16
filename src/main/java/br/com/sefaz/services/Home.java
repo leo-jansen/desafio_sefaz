@@ -14,7 +14,7 @@ import br.com.sefaz.util.JPAUtil;
 
 public class Home implements Path {
 	@Override
-	public String exeuta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EntityManager entityManager = JPAUtil.getEntityManager();
 		UsuarioRepository usuarioRepository = new UsuarioRepository(entityManager);
 		List<Usuario> list = usuarioRepository.buscarUsuarios();
