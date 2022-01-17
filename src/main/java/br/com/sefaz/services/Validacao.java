@@ -28,7 +28,7 @@ public class Validacao implements Path {
 			session.setAttribute("isConnected", true);
 			return "redirect:/sefaz/home";
 		} else {
-			request.setAttribute("emailSenha", "ok");
+			request.setAttribute("falhaLogin", true);
 			return "forward:login.jsp";
 		}
 	}

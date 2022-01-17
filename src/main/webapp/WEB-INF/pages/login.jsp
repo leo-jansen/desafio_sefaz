@@ -16,9 +16,9 @@
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
 	</header>
 	<div class="container">
-		<c:if test="${emailSenha == 'ok'}">
+		<c:if test="${falhaLogin == true}">
 			<div class="alert alert-danger" role="alert">
-				Email ja utilizado
+				Usuario ou Senha invalidos
 			</div>
 		</c:if>
 		<form action="/sefaz/validacao" method="post" class="card-body">
