@@ -75,7 +75,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return String.format("Nome: %s | Email: %s | %s", this.nome, this.email, this.telefone.toString());
+		return String.format("Id: %d | Nome: %s | Email: %s | %s", this.id, this.nome, this.email, this.telefone.toString());
 	}
 
 	@Override
