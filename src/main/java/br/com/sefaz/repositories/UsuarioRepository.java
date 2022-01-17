@@ -34,6 +34,14 @@ public class UsuarioRepository {
 		}
 	}
 
+	public List<Usuario> buscarUsuarioPorEmail(String email) {
+		String jpql = "SELECT u FROM Usuario u WHERE u.email = :email";
+		List<Usuario> user = this.entityManager.createQuery(jpql, Usuario.class)
+				.setParameter("email", email)
+				.getResultList();
+		return user;
+	}
+
 	public Usuario buscaUsuarioPorId(Long id) {
 		return this.entityManager.find(Usuario.class, id);
 	}
@@ -49,12 +57,12 @@ public class UsuarioRepository {
 		this.entityManager.getTransaction().commit();
 	}
 
-  public void remove(Usuario usuario) {
+	public void remove(Usuario usuario) {
 		this.entityManager.getTransaction().begin();
 		this.entityManager.merge(usuario);
 		this.entityManager.remove(usuario);
 		this.entityManager.getTransaction().commit();
-  }
+	}
 
 	public void removeTodosUsuarios() {
 		String query = "TRUNCATE TABLE tb_usuarios";

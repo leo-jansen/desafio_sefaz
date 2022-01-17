@@ -23,14 +23,13 @@ public class Validacao implements Path {
 		UsuarioRepository usuarioRepository = new UsuarioRepository(entityManager);
 		Usuario usuario = usuarioRepository.buscarUsuarioPorEmaileSenha(email, senha);
 		entityManager.close();
-
 		if (email.equals(usuario.getEmail()) && senha.equals(usuario.getSenha())) {
 			HttpSession session = request.getSession();
 			session.setAttribute("isConnected", true);
 			return "redirect:/sefaz/home";
 		} else {
+			request.setAttribute("emailSenha", "ok");
 			return "forward:login.jsp";
 		}
 	}
-
 }

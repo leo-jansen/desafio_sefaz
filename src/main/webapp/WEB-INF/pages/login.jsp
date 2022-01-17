@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,6 +16,11 @@
 		<a class="navbar-brand" href="/sefaz/home">HOME</a>
 	</header>
 	<div class="container">
+		<c:if test="${emailSenha == 'ok'}">
+			<div class="alert alert-danger" role="alert">
+				Email ja utilizado
+			</div>
+		</c:if>
 		<form action="/sefaz/validacao" method="post" class="card-body">
 			<div class="form-group">
 				<label for="email" class="form-label">Email</label>

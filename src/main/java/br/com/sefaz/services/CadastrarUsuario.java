@@ -1,6 +1,7 @@
 package br.com.sefaz.services;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -21,14 +22,19 @@ public class CadastrarUsuario implements Path {
 		String numero = request.getParameter("numero");
 		String tipo = request.getParameter("tipo");
 
-		Usuario usuario = new Usuario(nome, email, senha, ddd, numero, tipo);
-
 		EntityManager entityManager = JPAUtil.getEntityManager();
 		UsuarioRepository usuarioRepository = new UsuarioRepository(entityManager);
-		usuarioRepository.cadastrar(usuario);
-		entityManager.close();
+		List<Usuario> usuarios = usuarioRepository.buscarUsuarioPorEmail(email);
 
-		return "redirect:/sefaz/home";
+		if (usuarios.size() >= 1) {
+			request.setAttribute("emailUtilizado", "ok");
+			return "forward:usuarioForm.jsp";
+		} else {
+			Usuario usuario = new Usuario(nome, email, senha, ddd, numero, tipo);
+			usuarioRepository.cadastrar(usuario);
+			entityManager.close();
+			return "redirect:/sefaz/home";
+		}
 	}
 
 }

@@ -22,6 +22,11 @@
 		</c:if>
 	</header>
 	<div class="container">
+		<c:if test="${emailUtilizado == 'ok'}">
+			<div class="alert alert-danger" role="alert">
+				Email ja utilizado
+			</div>
+		</c:if>
 		<form action="/sefaz/alterar?id=${usuario.id}" method="post" class="card-body">
 			<div class="form-group">
 				<label for="nome" class="form-label">Nome</label>
